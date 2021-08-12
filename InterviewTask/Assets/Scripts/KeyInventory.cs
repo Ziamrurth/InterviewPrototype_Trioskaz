@@ -8,6 +8,7 @@ public class KeyInventory {
 
     private List<Key> _keysList;
     private int _inventorySize;
+    private Key _activeKey;
 
     public KeyInventory(UI_Inventory uiInventory, int InventorySize)
     {
@@ -20,15 +21,36 @@ public class KeyInventory {
     public void AddKey(Key key)
     {
         _keysList.Add(key);
-
         onInventoryChangedCallback?.Invoke();
     }
 
     public void RemoveKey(Key key)
     {
-        _keysList.Remove(key);
+        if (_activeKey == key)
+            _activeKey = null;
 
+        _keysList.Remove(key);
         onInventoryChangedCallback?.Invoke();
+    }
+
+    public void DeleteKey(Key key)
+    {
+        if (_activeKey == key)
+            _activeKey = null;
+
+        _keysList.Remove(key);
+        _activeKey = null;
+        onInventoryChangedCallback?.Invoke();
+    }
+
+    public void SetActiveKey(Key key)
+    {
+        _activeKey = key;
+    }
+
+    public Key GetActiveKey()
+    {
+        return _activeKey;
     }
 
     public List<Key> GetKeyList()

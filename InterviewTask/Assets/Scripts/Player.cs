@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     [SerializeField] private int _inventorySize;
+    [SerializeField] private float _interactDistance;
     [SerializeField] private UI_Inventory _uiInventory;
     private KeyInventory _inventory;
 
@@ -14,8 +15,9 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)){
-            PickupKey();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            InteractWithObject();
         }
     }
 
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour {
         return _inventory;
     }
 
-    private void PickupKey()
+    private void InteractWithObject()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -32,12 +34,24 @@ public class Player : MonoBehaviour {
         {
             Transform objectHit = hit.transform;
 
-            if (objectHit.tag.Equals("Key"))
+            if (Vector3.Distance(transform.position, objectHit.position) < _interactDistance)
             {
-                if (!_inventory.IsFull())
+                if (objectHit.tag.Equals("Key"))
                 {
-                    Key key = objectHit.parent.GetComponent<KeyWorld>().PickupKey();
-                    _inventory.AddKey(key);
+                    if (!_inventory.IsFull())
+                    {
+                        Key key = objectHit.parent.GetComponent<KeyWorld>().PickupKey();
+                        _inventory.AddKey(key);
+                    }
+                }
+
+                if (objectHit.tag.Equals("Door"))
+                {
+                    if (_inventory.GetActiveKey() != null)
+                    {
+                        if (objectHit.GetComponent<Door>().TryToOpen(_inventory.GetActiveKey()))
+                            _inventory.DeleteKey(_inventory.GetActiveKey());
+                    }
                 }
             }
         }

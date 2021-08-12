@@ -25,6 +25,13 @@ public class InventorySlot : MonoBehaviour {
         removeButton.interactable = false;
     }
 
+    public void OnSlotButton()
+    {
+        KeyInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetInventory();
+
+        inventory.SetActiveKey(_key);
+    }
+
     public void OnRemoveButton()
     {
         KeyInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetInventory();
