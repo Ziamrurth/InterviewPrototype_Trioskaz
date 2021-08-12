@@ -1,7 +1,7 @@
 # InterviewPrototype_Trioskaz
 
 - Simple FPP character controller. WASD to move, mouse to look around
-- Simple inventory to hold keys. You may click "TAB" to interact with inventory. Click on key icon to take it in hand. You can click red circle pehind key icon to drop key to the ground. You can press "E" to take key
+- Simple inventory to hold keys. You may click "TAB" to interact with inventory. Click on key icon to take it in hand. You can click red circle near key icon to drop key to the ground. You can press "E" to take key
 - You can open door only using right key. If you hava key in hand you can press "E" to use it on door
 - You need to open all doors to win!
 ____
