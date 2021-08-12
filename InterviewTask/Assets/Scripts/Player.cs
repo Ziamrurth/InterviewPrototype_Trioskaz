@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private int _inventorySize;
     [SerializeField] private float _interactDistance;
     [SerializeField] private UI_Inventory _uiInventory;
+
     private KeyInventory _inventory;
 
     void Start()
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour {
                     {
                         if (objectHit.GetComponent<Door>().TryToOpen(_inventory.GetActiveKey()))
                             _inventory.DeleteKey(_inventory.GetActiveKey());
+                        else _inventory.SetActiveKey(null);
                     }
                 }
             }

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour {
+    public delegate void OnDoorOpened();
+    public OnDoorOpened onDoorOpenCallback;
+
     [SerializeField] private Key.KeyType _keyType;
     [SerializeField] private Material _openedMaterial;
     [SerializeField] private Material _wrongKeyMaterial;
+
     private Material _defaultMaterial;
     private Transform _door;
     private float _wrongKeyMaterialTime = 0.5f;
@@ -35,6 +39,7 @@ public class Door : MonoBehaviour {
     {
         _door.GetComponent<MeshRenderer>().material = _openedMaterial;
         _doorOpen = true;
+        onDoorOpenCallback?.Invoke();
     }
 
     private IEnumerator WrongKey()

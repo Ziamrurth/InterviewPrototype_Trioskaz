@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void ChangeControllerMode()
+    public void ChangeControllerMode()
     {
         _controllerMode = !_controllerMode;
         if (_controllerMode)

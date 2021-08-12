@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeyWorld : MonoBehaviour {
     [SerializeField] private KeyPreset _keyPreset;
+
     private Key _key;
 
     void Start()
