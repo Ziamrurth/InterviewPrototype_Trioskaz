@@ -8,7 +8,7 @@ public class InventorySlot : MonoBehaviour {
     public Button removeButton;
 
     private Key _key;
-
+    
     public void AddKey(Key key)
     {
         _key = key;
@@ -28,6 +28,20 @@ public class InventorySlot : MonoBehaviour {
     public void OnRemoveButton()
     {
         KeyInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetInventory();
+
+        CreateKeyWorld();
         inventory.RemoveKey(_key);
     }
+
+    private void CreateKeyWorld()
+    {
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        GameObject key = new GameObject("Key");
+        key.transform.position = player.position;
+        key.transform.rotation = player.rotation;
+        key.AddComponent<KeyWorld>();
+        key.GetComponent<KeyWorld>().SetKeyPreset(_key.GetKeyPreset());
+    }
+
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public float mouseSensivity = 100f;
     public float speed = 12f;
-
+    
     private Transform _mainCamera;
     private CharacterController _charController;
     private float _xRotation = 0f;

@@ -458,6 +458,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2048087677}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &938001760 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5209923329903392249, guid: 9d55d3baea55b4b43b0b99379aa49545,
+    type: 3}
+  m_PrefabInstance: {fileID: 5209923330168458456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &960858350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +1614,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 640587303795838769, guid: 748979b4d871e8e458c1178436101889,
+        type: 3}
+      propertyPath: _collidersToIgnore.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 640587303795838769, guid: 748979b4d871e8e458c1178436101889,
+        type: 3}
+      propertyPath: _collidersToIgnore.Array.data[0]
+      value: 
+      objectReference: {fileID: 938001760}
     - target: {fileID: 2480077523681259755, guid: 748979b4d871e8e458c1178436101889,
         type: 3}
       propertyPath: m_RootOrder

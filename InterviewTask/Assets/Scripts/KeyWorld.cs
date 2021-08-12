@@ -8,6 +8,18 @@ public class KeyWorld : MonoBehaviour {
 
     void Start()
     {
+        if(_keyPreset != null)
+        {
+            _key = new Key(_keyPreset);
+
+            SetMaterial();
+            Instantiate(_keyPreset.prefab, transform);
+        }
+    }
+
+    public void SetKeyPreset(KeyPreset keyPreset)
+    {
+        _keyPreset = keyPreset;
         _key = new Key(_keyPreset);
 
         SetMaterial();
