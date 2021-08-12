@@ -79,7 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e6ec6af5f0b8049af2c365254ed240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 2
+  _inventorySize: 2
+  _interactDistance: 1.8
   _uiInventory: {fileID: 0}
 --- !u!1 &1030804607849810498
 GameObject:

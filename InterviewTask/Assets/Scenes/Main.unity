@@ -2116,16 +2116,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 640587303795838769, guid: 748979b4d871e8e458c1178436101889,
-        type: 3}
-      propertyPath: _collidersToIgnore.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 640587303795838769, guid: 748979b4d871e8e458c1178436101889,
-        type: 3}
-      propertyPath: _collidersToIgnore.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2480077523681259755, guid: 748979b4d871e8e458c1178436101889,
         type: 3}
       propertyPath: m_RootOrder
@@ -2186,16 +2176,6 @@ PrefabInstance:
       propertyPath: _uiInventory
       value: 
       objectReference: {fileID: 1106280015}
-    - target: {fileID: 5745539189989326746, guid: 748979b4d871e8e458c1178436101889,
-        type: 3}
-      propertyPath: _inventorySize
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745539189989326746, guid: 748979b4d871e8e458c1178436101889,
-        type: 3}
-      propertyPath: _interactDistance
-      value: 1.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 748979b4d871e8e458c1178436101889, type: 3}
 --- !u!1001 &3371797163817919671
